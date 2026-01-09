@@ -1,0 +1,166 @@
+import javax.swing.*;s
+import java.awt.*;
+import java.awt.event.*;
+
+public class FeedbackForm extends JFrame implements ActionListener {
+    // Components
+    JLabel nameLabel, rollLabel, feedbackLabel, messageLabel, titleLabel;
+    JTextField nameField, rollField;
+    JTextArea feedbackArea;
+    JButton submitButton, clearButton;
+    JPanel formPanel;
+
+    FeedbackForm() {
+        setTitle("🌈 Student Feedback Form");
+        setSize(450, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Center the window
+
+        // Custom gradient panel for background
+        formPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                Graphics2D g2d = (Graphics2D) g;
+                Color color1 = new Color(173, 216, 230); // Light blue
+                Color color2 = new Color(224, 255, 255); // Mint white
+                GradientPaint gp = new GradientPaint(0, 0, color1, 0, getHeight(), color2);
+                g2d.setPaint(gp);
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+
+        formPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        // Title Label
+        titleLabel = new JLabel("✨ Student Feedback Form ✨", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 22));
+        titleLabel.setForeground(new Color(25, 25, 112)); // Navy
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        formPanel.add(titleLabel, gbc);
+
+        // Name
+        nameLabel = new JLabel("Name:");
+        nameLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        formPanel.add(nameLabel, gbc);
+
+        nameField = new JTextField(20);
+        gbc.gridx = 1;
+        formPanel.add(nameField, gbc);
+
+        // Roll No
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        rollLabel = new JLabel("Roll No:");
+        rollLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        formPanel.add(rollLabel, gbc);
+
+        rollField = new JTextField(20);
+        gbc.gridx = 1;
+        formPanel.add(rollField, gbc);
+
+        // Feedback
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        feedbackLabel = new JLabel("Feedback:");
+        feedbackLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        formPanel.add(feedbackLabel, gbc);
+
+        feedbackArea = new JTextArea(5, 20);
+        feedbackArea.setLineWrap(true);
+        feedbackArea.setWrapStyleWord(true);
+        feedbackArea.setFont(new Font("SansSerif", Font.PLAIN, 13));
+        JScrollPane scrollPane = new JScrollPane(feedbackArea);
+        gbc.gridx = 1;
+        formPanel.add(scrollPane, gbc);
+
+        // Buttons
+        gbc.gridy = 4;
+        gbc.gridx = 0;
+        submitButton = new JButton("Submit");
+        styleButton(submitButton, new Color(60, 179, 113)); // Medium sea green
+        formPanel.add(submitButton, gbc);
+
+        gbc.gridx = 1;
+        clearButton = new JButton("Clear");
+        styleButton(clearButton, new Color(220, 53, 69)); // Red
+        formPanel.add(clearButton, gbc);
+
+        // Message Label
+        gbc.gridy = 5;
+        gbc.gridx = 0;
+        gbc.gridwidth = 2;
+        messageLabel = new JLabel("", SwingConstants.CENTER);
+        messageLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        formPanel.add(messageLabel, gbc);
+
+        // Add listeners
+        submitButton.addActionListener(this);
+        clearButton.addActionListener(this);
+
+        // Add hover effect
+        addHoverEffect(submitButton, new Color(46, 139, 87));
+        addHoverEffect(clearButton, new Color(178, 34, 34));
+
+        add(formPanel);
+        setVisible(true);
+    }
+
+    // Helper to style buttons
+    private void styleButton(JButton button, Color bgColor) {
+        button.setBackground(bgColor);
+        button.setForeground(Color.WHITE);
+        button.setFont(new Font("Arial", Font.BOLD, 14));
+        button.setFocusPainted(false);
+        button.setBorderPainted(false);
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }
+
+    // Hover color change
+    private void addHoverEffect(JButton button, Color hoverColor) {
+        Color originalColor = button.getBackground();
+        button.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(hoverColor);
+            }
+
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(originalColor);
+            }
+        });
+    }
+
+    // Actions
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == submitButton) {
+            String name = nameField.getText().trim();
+            String roll = rollField.getText().trim();
+            String feedback = feedbackArea.getText().trim();
+
+            if (name.isEmpty() || roll.isEmpty() || feedback.isEmpty()) {
+                messageLabel.setText("⚠️ Please fill all fields!");
+                messageLabel.setForeground(Color.RED);
+            } else {
+                messageLabel.setText("✅ Feedback Submitted! Thank you, " + name + " 😊");
+                messageLabel.setForeground(new Color(0, 128, 0)); // Green
+            }
+        } else if (e.getSource() == clearButton) {
+            nameField.setText("");
+            rollField.setText("");
+            feedbackArea.setText("");
+            messageLabel.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(FeedbackForm::new);
+    }
+}
