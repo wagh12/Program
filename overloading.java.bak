@@ -1,0 +1,27 @@
+class overloading 
+{
+	String size;
+	String topping;
+	
+		void pizza()
+	{
+		this.size="Regular";
+		this.topping="cheese";
+	}
+	void pizza(String s,String t){
+		this.size=s;
+		this.topping=t;
+	}
+	
+		void display(){
+		pizza();
+		System.out.println("A "+size+"size pizza with "+topping+" is being beked");
+		pizza("large"," Onion and Capsicum");
+		System.out.println("A "+size+"size pizza with "+topping+" is being beked");
+	}	
+	public static void main(String[] args) 
+	{
+     overloading p=new overloading();
+	 p.display();
+	}
+}
