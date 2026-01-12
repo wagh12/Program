@@ -1,0 +1,29 @@
+class pizza 
+{
+	String size;
+	String topping;
+	
+	pizza(){
+		this.size="Regular";
+		this.topping="chees";
+		System.out.println ("A "+size+"size pizza with"+topping+" is being baked");
+	}
+	pizza(String s,String t){
+		this.size=s;
+		this.topping=t;
+			System.out.println(" A "+size+"size pizza with "+topping+" is being baked");
+	}
+	pizza(String sc){
+		this.size="Regular";
+		this.topping="Paneer";
+		String sauce=sc;
+			System.out.println("A "+size+"size pizza with "+topping+" and "+sauce+" is being baked");
+	}
+		
+	public static void main(String[] args) 
+	{
+		pizza p1=new pizza();
+		pizza p2=new pizza(" large"+" onion and capsicon");
+		pizza p3=new pizza("Makhani");
+	}
+}
