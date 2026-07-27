@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Content Layout</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5b51d;
+}
+
+.page {
+  padding: 30px;
+}
+
+/* Social Icons */
+.socials {
+  display: flex;
+  gap: 10px;
+  height: 34px;
+  margin-bottom: 20px;
+}
+
+.socials span {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta { background: #e1306c; }
+.fb { background: #1877f2; }
+.in { background: #0077b5; }
+
+/* White Container */
+.container {
+  background: white;
+  padding: 40px;
+}
+
+/* Top Layout */
+.top {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+
+/* Video Box */
+.video-box {
+  flex: 1;
+  border: 2px solid black;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Play Button */
+.play {
+  width: 0;
+  height: 0;
+  border-left: 60px solid #4a6fb3;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+}
+
+/* Text */
+.text {
+  font-size: 18px;
+  margin: 25px 0;
+  max-width: 700px;
+}
+
+/* Images */
+.images {
+  display: flex;
+  gap: 20px;
+}
+
+.images img {
+  width: 450px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Button */
+button {
+  background: #ffe3b3;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 5px 0 #e65b5b;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #e65b5b;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Social Icons -->
+  <div class="socials">
+    <img src="images.jpg">
+ <img src="download.jpg">
+ <img src="fecebook.png">
+  </div>
+
+  <!-- White Container -->
+  <div class="container">
+
+    <!-- Top Section -->
+    <div class="top">
+      <div class="left">
+        <div class="avatar">
+            <img src="man.jpg">
+        </div>
+        <button>Submit</button>
+      </div>
+
+      <div class="video-box">
+        <div class="play"></div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <p class="text">
+      A man's greatness lies in how he treats people with dignity
+      and spreads positivity around him.
+    </p>
+
+    <!-- Image Section -->
+    <div class="images">
+      <img src="tiger.jpg" alt="Red Panda">
+      <img src="rabbit.jpg" alt="Rabbit">
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
