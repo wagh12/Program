@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Card</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #d3aded;
+}
+
+.page {
+  padding: 30px;
+}
+
+/* Social Icons */
+.socials {
+  display: flex;
+  gap: 10px;
+  height: 42px;
+  margin-bottom: 20px;
+}
+
+.socials span {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta { background: #e1306c; }
+.fb { background: #1877f2; }
+.in { background: #0077b5; }
+
+/* White Container */
+.container {
+  background: white;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Yellow Card */
+.card {
+  background: #ecd193;
+  width: 85%;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+
+/* Text */
+.card p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-left: 36px;
+  margin-bottom: 40px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Button */
+button {
+  background: #ffe3b3;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 5px 0 #e65b5b;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #e65b5b;
+}
+
+/* Input */
+input {
+  width: 160px;
+  height: 38px;
+  border: 2px solid black;
+  outline: none;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Social Icons -->
+  <div class="socials">
+    <img src="images.jpg">
+   <img src="download.jpg">
+         <img src="fecebook.png">
+  </div>
+
+  <!-- White Container -->
+  <div class="container">
+
+    <!-- Yellow Card -->
+    <div class="card">
+
+      <div class="avatar">
+        <img src="man.jpg">
+      </div>
+
+      <p>
+        He protects his family, respects others, and
+        works hard to achieve his goals.
+      </p>
+
+      <div class="actions">
+        <button>Submit</button>
+        <input type="text">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
