@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Cards</title>
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5b51d;
+}
+
+.page {
+  padding: 30px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  flex: 1;
+  padding: 80px 20px;
+  text-align: center;
+ 
+}
+
+.icon-box {
+  background: #f5b51d;
+  width: 120px;
+  height: 220px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+button {
+  background: #ffe3b3;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #e16b5c;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #e16b5c;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Social Icons -->
+    <div class="socials">
+         <img src="download.jpg" />
+      <img src="fecebook.png">
+      <img src="images.jpg">
+    </div>
+
+    <!-- Cards Wrapper -->
+    <div class="cards">
+      <!-- Card -->
+      <div class="card">
+        <div class="icon-box">
+          👜
+        </div>
+        <p>
+          Strong, spacious, and stylish <br />
+          – a bag for every need.
+        </p>
+        <button>Submit</button>
+      </div>
+
+      <!-- Card -->
+      <div class="card">
+        <div class="icon-box">
+          👜
+        </div>
+        <p>
+          Strong, spacious, and stylish <br />
+          – a bag for every need.
+        </p>
+        <button>Submit</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
