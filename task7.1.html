@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bag Card</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #95f8f1;
+}
+
+.container {
+  padding: 30px;
+}
+
+/* Social Icons */
+.socials {
+  display: flex;
+  gap: 12px;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.socials span {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta { background: #e1306c; }
+.fb { background: #1877f2; }
+.in { background: #0077b5; }
+
+/* Card */
+.card {
+  background: white;
+  display: flex;
+  padding: 40px;
+  min-height: 450px;
+}
+
+/* Left Yellow Box */
+.left {
+  background: #ecf8a8;
+  width: 200px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bag-icon {
+  font-size: 140px;
+  color: #2b2b2b;
+}
+
+/* Right Content */
+.right {
+  width: 60%;
+  padding: 80px 60px;
+}
+
+.right p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Button */
+button {
+  background: #ffe3b3;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #e65b5b;
+}
+
+button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #e09e9e;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Social Icons -->
+    <div class="socials">
+      <img src="download.jpg">
+      <img src="images.jpg">
+      <img src="fecebook.png">
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+      <div class="left">
+        <div class="bag-icon">👜</div>
+      </div>
+
+      <div class="right">
+        <p>
+          Strong, spacious, and stylish – <br>
+          a bag for every need.
+        </p>
+        <button>Submit</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
